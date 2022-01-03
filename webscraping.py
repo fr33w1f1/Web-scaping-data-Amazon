@@ -27,15 +27,6 @@ search_bar = driver.find_element(By.ID, 'twotabsearchtextbox')
 search_bar.click()
 
 
-# product_list = driver.find_elements(
-#    By.XPATH, '//div[contains(@class, "s-result-item s-asin ")]')
-
-
-# next_button = driver.find_element(By.XPATH, "//*[text()='Next']")
-
-# next_button.click()
-
-
 def scrape_product(product, maxpages):
 
     search_bar.send_keys(product)
