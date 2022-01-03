@@ -1,4 +1,5 @@
 #Read the reference file for detail explaination about web scraping using selenium
+#webscraping.csv is the result when you run this code with scrape_product('ps5', 2)
 
 import pandas as pd
 from selenium import webdriver
