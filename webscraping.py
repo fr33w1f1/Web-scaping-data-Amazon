@@ -1,4 +1,4 @@
-#Read the reference file for detail explaination about web scraping using selenium
+#Reference file includes the references that I have used to write this code
 #webscraping.csv is the result when you run this code with scrape_product('ps5', 2)
 
 import pandas as pd
