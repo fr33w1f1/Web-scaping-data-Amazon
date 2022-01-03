@@ -18,9 +18,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
+
+#this option to prevent chrome closes automatically even when driver.quit() isn't used
 options.add_experimental_option("detach", True)
 options.add_experimental_option("excludeSwitches", ['enable-logging'])
 options.add_argument("--incognito")
+#ChromeDriverManager().install() so i dont have to download ChromeDriver and set up the path
 driver = webdriver.Chrome(service=Service(
     ChromeDriverManager().install()), options=options)
 
@@ -95,13 +98,13 @@ def scrape_product(product, maxpages):
 
             next_button = driver.find_element(By.XPATH, "//*[text()='Next']")
             next_button.click()
-            page_number += 1
+            page_number += 1 #we are in while loop
 
         else:
             condition = False
             time.sleep(2)
             driver.quit()
-
+#put everything we've got into a dictionary so we could convert it into a csv file
     pre = {'name of product': product_name,
            'price of product': product_price,
            'ratings of product': product_ratings,
@@ -109,6 +112,7 @@ def scrape_product(product, maxpages):
            'link of product': product_link}
 
     final = pd.DataFrame(pre)
+#change E:\python auto\webscraping.csv to directory where you want to export the csv
     final.to_csv('E:\python auto\webscraping.csv', index=False)
 
 
