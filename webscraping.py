@@ -1,3 +1,5 @@
+#Read the reference file for detail explaination about web scraping using selenium
+
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -110,12 +112,10 @@ def scrape_product(product, maxpages):
 
 
 scrape_product('ps5', 2)
-#
+
 # print(product_name)
 # print(product_price)
 # print(product_ratings)
 # print(product_ratings_num)
 # print(product_link)
-#
-# print(product_link)
-# driver.quit()
+
