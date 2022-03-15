@@ -76,16 +76,12 @@ def scrape_product(product, maxpages):
                 Review = i.find_elements(
                     By.XPATH, './/div[contains(@class, "a-row a-size-small")]/span'
                 )
-            #
                 if Review != []:
                     ratings = Review[0].get_attribute('aria-label')
-
                 else:
                     ratings = 0
-
-            #
+                    
                 product_ratings.append(ratings)
-
 
                 # Link
 
