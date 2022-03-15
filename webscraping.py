@@ -42,7 +42,6 @@ def scrape_product(product, maxpages):
     product_name = []
     product_price = []
     product_ratings = []
-    product_ratings_num = []
     product_link = []
 
     condition = True
@@ -80,13 +79,13 @@ def scrape_product(product, maxpages):
             #
                 if Review != []:
                     ratings = Review[0].get_attribute('aria-label')
-                    ratings_num = Review[1].get_attribute('aria-label')
+
                 else:
                     ratings = 0
-                    ratings_num = 0
+
             #
                 product_ratings.append(ratings)
-                product_ratings_num.append(ratings_num)
+
 
                 # Link
 
@@ -108,7 +107,6 @@ def scrape_product(product, maxpages):
     pre = {'name of product': product_name,
            'price of product': product_price,
            'ratings of product': product_ratings,
-           'number ratings of product': product_ratings_num,
            'link of product': product_link}
 
     final = pd.DataFrame(pre)
@@ -121,6 +119,5 @@ scrape_product('ps5', 2)
 # print(product_name)
 # print(product_price)
 # print(product_ratings)
-# print(product_ratings_num)
 # print(product_link)
 
